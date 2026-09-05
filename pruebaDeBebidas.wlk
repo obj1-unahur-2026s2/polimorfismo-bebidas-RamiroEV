@@ -4,13 +4,13 @@ object tito {
   var bebidaConsumida = whisky
   var dosis = 10 
 
+  method peso() = peso
+  method cambiarPeso(nuevoPeso) {peso=nuevoPeso}
+
   method consumir(cantidad, bebida){
       bebidaConsumida = bebida
       dosis = cantidad
   }
-
-  method peso()= a
-
 
   method velocidad() {
     return bebidaConsumida.rendimientoQueOtorga(dosis) * 490 / peso
@@ -18,20 +18,22 @@ object tito {
   }
 }
 
-
-
 object whisky {
   method rendimientoQueOtorga(dosisConsumida) {
-    return 0.9 ** dosisConsumida
+    return 0.9 ** dosisConsumida 
   }
 }
 
 object terere {
   method rendimientoQueOtorga(dosisConsumida) {
-    return 0.1 ** dosisConsumida
+    return 1.max(0.1 * dosisConsumida)
   }  
 }
 
 object cianuro {
-  
+  method rendimientoQueOtorga(dosisConsumida) {
+    return if(tito.peso() > 70){return tito.peso() * 0.01 + dosisConsumida} 
+           else {return 0}
+  }
+
 }
