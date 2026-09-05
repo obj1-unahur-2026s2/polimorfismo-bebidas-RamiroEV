@@ -11,23 +11,25 @@ object tito {
 
   method peso()= a
 
-  method rendimiento() {
-    
-  }
 
   method velocidad() {
-    
+    return bebidaConsumida.rendimientoQueOtorga(dosis) * 490 / peso
+
   }
 }
 
 
 
 object whisky {
-  
+  method rendimientoQueOtorga(dosisConsumida) {
+    return 0.9 ** dosisConsumida
+  }
 }
 
 object terere {
-  
+  method rendimientoQueOtorga(dosisConsumida) {
+    return 0.1 ** dosisConsumida
+  }  
 }
 
 object cianuro {
