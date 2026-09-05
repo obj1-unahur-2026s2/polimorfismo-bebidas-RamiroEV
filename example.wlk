@@ -1,9 +1,32 @@
-object pepita {
-  var energy = 100
+object tito {
 
-  method energy() = energy
+  var peso = 70
+  var bebida = whisky
 
-  method fly(minutes) {
-    energy = energy - minutes * 3
+  method peso() {
+    0
+  }   
+
+  method rendimiento() {
+    
   }
+  
+  method consumir(cantidad, bebida){
+
+  }
+
+}
+
+
+
+object whisky {
+  
+}
+
+object terere {
+  
+}
+
+object cianuro {
+  
 }
